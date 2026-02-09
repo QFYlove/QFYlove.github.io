@@ -1,0 +1,15 @@
+/* 1. 浅色模式（白天）：强制恢复经典的蝴蝶蓝 */
+#footer {
+  background: #49b1f5 !important;
+  color: #fff !important; /* 文字白色，防止看不清 */
+}
+
+/* 2. 深色模式（黑夜）：使用有区分度的深灰色 */
+[data-theme="dark"] #footer {
+  /* #232323 是比纯黑稍亮一点的深灰，非常有质感 */
+  /* 如果觉得不够明显，可以试试 #333333 */
+  background: #232323 !important;
+
+  /* 这里的文字颜色设为浅灰，不刺眼 */
+  color: #ccc !important;
+}
