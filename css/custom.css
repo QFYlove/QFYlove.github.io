@@ -1,15 +1,125 @@
-/* 1. 浅色模式（白天）：强制恢复经典的蝴蝶蓝 */
-#footer {
-  background: #49b1f5 !important;
-  color: #fff !important; /* 文字白色，防止看不清 */
-}
-
-/* 2. 深色模式（黑夜）：使用有区分度的深灰色 */
 [data-theme="dark"] #footer {
-  /* #232323 是比纯黑稍亮一点的深灰，非常有质感 */
-  /* 如果觉得不够明显，可以试试 #333333 */
   background: #232323 !important;
 
   /* 这里的文字颜色设为浅灰，不刺眼 */
   color: #ccc !important;
+}
+
+/* ==================================
+   RYM 风格乐评卡片
+   ================================== */
+.rym-card {
+  display: flex;
+  background: rgba(255, 255, 255, 0.05); /*稍微亮一点的背景*/
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  gap: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 手机端适配：变成上下结构 */
+@media screen and (max-width: 768px) {
+  .rym-card {
+    flex-direction: column;
+  }
+  .rym-cover {
+    width: 100% !important;
+    text-align: center;
+  }
+  .rym-cover img {
+    max-width: 200px;
+  }
+}
+
+/* 左侧：封面和评分 */
+.rym-cover {
+  width: 220px;
+  flex-shrink: 0; /* 防止被挤压 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rym-cover img {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-bottom: 10px !important;
+}
+
+.rym-rating {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #ffcc00; /* 星星黄 */
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+  font-family: "Arial", sans-serif;
+}
+
+/* 右侧：信息区域 */
+.rym-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.rym-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.rym-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.rym-artist {
+  font-size: 1.2em;
+  color: #49b1f5; /* 蝴蝶蓝 */
+  font-weight: bold;
+}
+
+.rym-meta {
+  font-size: 0.9em;
+  color: #999;
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+.rym-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-right: 5px;
+  font-size: 0.85em;
+}
+
+.rym-review-text {
+  margin-top: 15px;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #ddd; /* 浅灰文字 */
+}
+
+/* 底部链接栏 */
+.rym-links {
+  margin-top: auto; /* 推到底部 */
+  padding-top: 15px;
+  display: flex;
+  gap: 15px;
+}
+
+.rym-links a {
+  color: #ccc;
+  font-size: 1.5em;
+  transition: color 0.3s;
+}
+
+.rym-links a:hover {
+  color: #fff;
+  text-decoration: none;
 }
